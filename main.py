@@ -31,6 +31,9 @@ def definePeriod():
 
   from_input = driver.find_element(By.ID, "from")
   from_input.send_keys("00.00.0000")
+  
+  to_input = driver.find_element(By.ID, "to")
+  to_input.send_keys("29.01.2022")
 
   ok_button = period.find_element(By.CLASS_NAME, "SubmitBtn")
   ok_button.click()
@@ -47,7 +50,7 @@ def get_id(cur):
 
 # chrome driver
 co = Options()  
-co.headless = True
+co.headless = False
 co.add_experimental_option('excludeSwitches', ['enable-logging'])
 
 driver = webdriver.Chrome('res/chromedriver', options=co)
